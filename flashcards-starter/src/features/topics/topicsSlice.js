@@ -33,9 +33,7 @@ const topicsSlice = createSlice({
         editTopic(state){},
         deleteTopic(state){},
 
-        addQuiz(state, { payload }) {
-            
-        }
+    
     }
 })
 
