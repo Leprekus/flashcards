@@ -7,7 +7,7 @@ import { selectTopics } from "./topicsSlice";
 export default function Topics() {
 
   const topics = useSelector(selectTopics); // replace this with a call to your selector to select all the topics in state
-
+  console.log(topics)
   return (
     <section className="center">
       <h1>Topics</h1>
@@ -16,10 +16,9 @@ export default function Topics() {
         
           <li className="topic" key={topic.id}>
           <Link to={
-            topic.quizIds.length > 0 ? 
+
             ROUTES.topicRoute(topic.id)
-            :
-            ROUTES.newQuizRoute()
+            
             } className="topic-link">
 
 

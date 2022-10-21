@@ -1,10 +1,11 @@
-//   quizzes: {
-//     quizzes: {
-//       '456': {
-//         id: '456',
-//         topicId: '123',
-//         name: 'quiz for example topic',
-//         cardIds: ['789', '101', '102']
+
+//   topics: {
+//     topics: {
+//       '123': {
+//         id: '123',
+//         name: 'example topic',
+//         icon: 'icon url',
+//         quizIds: ['456']
 //       }
 //     }
 //   },
@@ -27,15 +28,18 @@ const topicsSlice = createSlice({
     reducers: {
         //payload id == topic's id 
         addTopic(state, { payload }) {
-            state.topics = payload
+            state.topics = {
+                ...state.topics,
+                [payload.id] : payload
+            }
 
         },
         editTopic(state){},
         deleteTopic(state){},
 
         addQuizId(state, { payload }) {
-            const quizId = payload.id
-            state.topics[payload.topicId].quizId = quizId
+            
+            state.topics[payload.topicId].quizId = payload.id
         }
     
     }

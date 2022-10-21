@@ -40,12 +40,12 @@ export default function NewTopicForm() {
 //   },
     const topicId = uuidv4()
     const topicObject = {
-      [topicId]: {
+    
         id: topicId,
         name: name,
         icon: icon,
         quizIds: [] 
-      }
+      
     }
   
     // dispatch your add topic action here
