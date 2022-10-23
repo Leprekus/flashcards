@@ -12,7 +12,12 @@ const quizzesSlice = createSlice({
 
             }
             
-        }
+        },
+        addCardId(state, { payload }) {
+            const previousCards = state.quizzes[payload.quizId].cardIds
+            state.quizzes[payload.quizId].cardIds = payload.id
+        
+        },
     }
 })
 //   quizzes: {
@@ -26,5 +31,5 @@ const quizzesSlice = createSlice({
 //     }
 //   },
 export const selectQuizzes = (state) => state.quizzes.quizzes
-export const { addQuiz } = quizzesSlice.actions
+export const { addQuiz, addCardId } = quizzesSlice.actions
 export default quizzesSlice.reducer
